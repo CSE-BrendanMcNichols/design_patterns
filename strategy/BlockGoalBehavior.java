@@ -1,4 +1,4 @@
-
+import java.util.Random;
 public class BlockGoalBehavior implements DefenceBehavior {
     public string Play() {
         Random random = new Random(); 
