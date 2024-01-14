@@ -35,6 +35,6 @@ public class Forward extends Player {
     }
 
     public String toString() {
-        return super.toString() + " - plays the position: Forward";
+        return super.toString() + " plays the position: Forward";
     }
 }

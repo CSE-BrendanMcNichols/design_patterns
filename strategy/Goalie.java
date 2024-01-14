@@ -12,6 +12,6 @@ public class Goalie extends Player {
     }
 
     public String toString() {
-        return super.toString() + "plays the position: Goalie";
+        return super.toString() + " plays the position: Goalie";
     }
 }
