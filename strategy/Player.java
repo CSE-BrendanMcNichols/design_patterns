@@ -1,5 +1,4 @@
 package strategy;
-
 public abstract class Player {
     protected String firstName;
     protected String lastName;
@@ -12,6 +11,14 @@ public abstract class Player {
     }
 
     public abstract String play(boolean hasPossession);
+
+    public OffenceBehavior getOffenceBehavior() {
+        return offenceBehavior;
+    }
+
+    public DefenceBehavior getDefenceBehavior() {
+        return defenceBehavior;
+    }
 
     public String toString() {
         return firstName + " " + lastName;

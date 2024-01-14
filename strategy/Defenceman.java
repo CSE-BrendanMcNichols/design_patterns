@@ -1,11 +1,12 @@
 package strategy;
 import java.util.Random;
 public class Defenceman extends Player {
-    public Defenceman (String firstName, String lastName) {
+
+    public Defenceman(String firstName, String lastName) {
         super(firstName, lastName);
         updateBehaviors();
     }
-    
+
     private void updateBehaviors() {
         if (new Random().nextInt(10) < 9) {
             offenceBehavior = new PassBehavior();
@@ -19,8 +20,13 @@ public class Defenceman extends Player {
             defenceBehavior = new BlockBehavior();
         }
     }
-    public String play (boolean hasPossession) {
+
+    public String play(boolean hasPossession) {
         updateBehaviors();
         return offenceBehavior.play();
+    }
+
+    public String toString() {
+        return super.toString() + "plays the position: Defenceman";
     }
 }
