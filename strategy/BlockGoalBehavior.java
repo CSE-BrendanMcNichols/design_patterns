@@ -1,8 +1,10 @@
+package strategy;
+
 import java.util.Random;
 public class BlockGoalBehavior implements DefenceBehavior {
-    public string Play() {
-        Random random = new Random(); 
-        int RandomNumber = new random.next(4);
+    public String play() {
+        Random random = new Random();
+        int randomNumber = random.nextInt(4);
 
         if (randomNumber == 0) {
             return "hand blocks the puck";
