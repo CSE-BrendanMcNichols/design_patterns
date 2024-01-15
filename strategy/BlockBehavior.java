@@ -1,6 +1,10 @@
 package strategy;
-
 import java.util.Random;
+/**
+ * @author Brendan McNichols
+ * Performs the block behavior
+ * @return a string representing the defensive action generated.
+ */
 public class BlockBehavior implements DefenceBehavior {
     public String play() {
         Random random = new Random();
