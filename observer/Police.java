@@ -1,14 +1,12 @@
 package observer;
-import java.util.ArrayList;
 
+import java.util.ArrayList;
 public class Police implements Observer {
-    private Subject cook;
     private ArrayList<String> locations;
     private StringBuilder notes;
     private ArrayList<String> people;
 
     public Police(Subject cook) {
-        this.cook = cook;
         this.locations = new ArrayList<>();
         this.notes = new StringBuilder();
         this.people = new ArrayList<>();
@@ -18,7 +16,12 @@ public class Police implements Observer {
     public void update(String location, String description, ArrayList<String> accomplices) {
         locations.add(location);
         notes.append(description).append("\n");
-        people.addAll(accomplices);
+        
+        for (String accomplice : accomplices) {
+            if (!people.contains(accomplice)) {
+                people.add(accomplice);
+            }
+        }
     }
 
     public String getLog() {

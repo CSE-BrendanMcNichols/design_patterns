@@ -2,11 +2,9 @@ package observer;
 
 import java.util.ArrayList;
 class Cartel implements Observer {
-    private Subject cook;
     private ArrayList<Sighting> sightings;
 
     public Cartel(Subject cook) {
-        this.cook = cook;
         this.sightings = new ArrayList<>();
         cook.registerObserver(this);
     }

@@ -1,6 +1,8 @@
 package observer;
 
 import java.util.ArrayList;
+
+// Cook class
 class Cook implements Subject {
     private ArrayList<Observer> observers;
     private String name;
@@ -10,14 +12,17 @@ class Cook implements Subject {
         this.name = name;
     }
 
+    @Override
     public void registerObserver(Observer observer) {
         observers.add(observer);
     }
 
+    @Override
     public void removeObserver(Observer observer) {
         observers.remove(observer);
     }
 
+    @Override
     public void notifyObservers(String location, String description, ArrayList<String> accomplices) {
         for (Observer observer : observers) {
             observer.update(location, description, accomplices);
@@ -25,7 +30,15 @@ class Cook implements Subject {
     }
 
     public void enterSighting(String location, String description, String accomplices) {
+        // Create a Sighting instance
         Sighting sighting = new Sighting(location, description, parseAccomplices(accomplices));
+
+        // Print information for debugging
+        System.out.println("Cook - enterSighting - Location: " + sighting.getLocation());
+        System.out.println("Cook - enterSighting - Details: " + sighting.getDetails());
+        System.out.println("Cook - enterSighting - Accomplices: " + sighting.getAccomplices());
+
+        // Notify observers
         notifyObservers(sighting.getLocation(), sighting.getDetails(), sighting.getAccomplices());
     }
 
