@@ -1,5 +1,4 @@
 package observer;
-
 import java.util.ArrayList;
 public class Police implements Observer {
     private ArrayList<String> locations;
