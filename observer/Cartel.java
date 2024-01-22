@@ -4,10 +4,13 @@ import java.util.ArrayList;
  * @author Brendan McNichols
  * Class representing cartel
  */
-class Cartel implements Observer {
+public class Cartel implements Observer {
     private ArrayList<Sighting> sightings;
+    private Subject cook;
 
+    
     public Cartel(Subject cook) {
+        this.cook = cook;
         this.sightings = new ArrayList<>();
         cook.registerObserver(this);
     }
