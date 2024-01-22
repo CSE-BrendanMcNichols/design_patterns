@@ -1,10 +1,17 @@
 package observer;
 import java.util.ArrayList;
+/*
+ * @author Brendan McNichols
+ * Class representing police
+ */
 public class Police implements Observer {
     private ArrayList<String> locations;
     private StringBuilder notes;
     private ArrayList<String> people;
-
+/**
+ * 
+ * @param cook Cook to observe
+ */
     public Police(Subject cook) {
         this.locations = new ArrayList<>();
         this.notes = new StringBuilder();
@@ -24,22 +31,21 @@ public class Police implements Observer {
     }
 
     public String getLog() {
-        StringBuilder log = new StringBuilder();
-        log.append("Locations:\n");
+        String log = "Locations:\n";
         for (String location : locations) {
-            log.append("- ").append(location).append("\n");
+            log += "- " + location + "\n";
         }
     
-        log.append("\nNotes:\n");
+        log += "\nNotes:\n";
         for (String note : notes.toString().trim().split("\n")) {
-            log.append("- ").append(note).append("\n");
+            log += "- " + note + "\n";
         }
     
-        log.append("\nAccomplices:\n");
+        log += "\nAccomplices:\n";
         for (String person : people) {
-            log.append("- ").append(person).append("\n");
+            log += "- " + person + "\n";
         }
-    
-        return log.toString();
-    }
+
+        return log;
+    }  
 }

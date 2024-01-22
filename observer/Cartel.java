@@ -1,6 +1,9 @@
 package observer;
-
 import java.util.ArrayList;
+/**
+ * @author Brendan McNichols
+ * Class representing cartel
+ */
 class Cartel implements Observer {
     private ArrayList<Sighting> sightings;
 
