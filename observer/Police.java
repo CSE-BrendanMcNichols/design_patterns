@@ -34,7 +34,7 @@ public class Police implements Observer {
         }
     
         log += "\nNotes:\n";
-        for (String note : notes.toString().trim().split("\n")) {
+        for (String note : notes) {
             log += "- " + note + "\n";
         }
     
