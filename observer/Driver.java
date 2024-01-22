@@ -1,5 +1,4 @@
 package observer;
-
 public class Driver {
 
 	public void run() {
