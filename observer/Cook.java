@@ -1,9 +1,16 @@
 package observer;
 import java.util.ArrayList;
+/**
+ * Class representing Cook 
+ * @author Brendan McNichols
+ */
 public class Cook implements Subject {
     private ArrayList<Observer> observers;
     private String name;
-
+/**
+ * Constructor for the cook class
+ * @param name
+ */
     public Cook(String name) {
         this.observers = new ArrayList<>();
         this.name = name;
@@ -22,7 +29,12 @@ public class Cook implements Subject {
             observer.update(location, description, accomplices);
         }
     }
-
+/**
+ * Sighting event and notify observers
+ * @param location
+ * @param description
+ * @param accomplices
+ */
     public void enterSighting(String location, String description, String accomplices) {
         Sighting sighting = new Sighting(location, description, parseAccomplices(accomplices));
         notifyObservers(sighting.getLocation(), sighting.getDetails(), sighting.getAccomplices());
@@ -36,7 +48,10 @@ public class Cook implements Subject {
         }
         return accompliceList;
     }
-
+/**
+ * get name of the cook
+ * @return name of the cook
+ */
     public String getName() {
         return name;
     }
