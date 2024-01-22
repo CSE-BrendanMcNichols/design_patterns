@@ -29,11 +29,17 @@ public class Police implements Observer {
         for (String location : locations) {
             log.append("- ").append(location).append("\n");
         }
-        log.append("\nNotes:\n").append(notes.toString().trim()).append("\n");
+    
+        log.append("\nNotes:\n");
+        for (String note : notes.toString().trim().split("\n")) {
+            log.append("- ").append(note).append("\n");
+        }
+    
         log.append("\nAccomplices:\n");
         for (String person : people) {
             log.append("- ").append(person).append("\n");
         }
+    
         return log.toString();
     }
 }

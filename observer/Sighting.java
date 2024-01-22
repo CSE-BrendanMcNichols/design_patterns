@@ -1,5 +1,4 @@
 package observer;
-
 import java.util.ArrayList;
 public class Sighting {
     private String location;
