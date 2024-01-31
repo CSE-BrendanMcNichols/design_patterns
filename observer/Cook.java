@@ -15,7 +15,7 @@ public class Cook implements Subject {
         this.observers = new ArrayList<>();
         this.name = name;
     }
-
+    
     public void registerObserver(Observer observer) {
         observers.add(observer);
     }

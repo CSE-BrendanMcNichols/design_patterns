@@ -18,7 +18,7 @@ public class Cartel implements Observer {
     public void update(String location, String description, ArrayList<String> accomplices) {
         sightings.add(new Sighting(location, description, accomplices));
     }
-
+    
     public String getLog() {
         StringBuilder log = new StringBuilder();
         for (Sighting sighting : sightings) {
