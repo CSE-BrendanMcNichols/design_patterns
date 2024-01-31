@@ -8,34 +8,28 @@ public class Shield extends PlayerDecorator {
         integrateDecor(FileReader.getLines("/Users/brendanmcnichols/Desktop/CSCE247/design_patterns/decorator/shield.txt"));
     }
 
-    @Override
     protected void integrateDecor(ArrayList<String> decor) {
-        int maxLength = 35; // Fixed line length for ASCII art
+        int maxLength = 35; 
+    
+        for (int i = 0; i < lines.size(); i++) {
+            StringBuilder lineBuilder = new StringBuilder(lines.get(i));
+            while (lineBuilder.length() < maxLength) {
+                lineBuilder.append(" ");
+            }
+            lines.set(i, lineBuilder.toString());
+        }
     
         for (int i = 0; i < decor.size(); i++) {
-            // Pad the warrior's line to maxLength
-            StringBuilder paddedPlayerLine = new StringBuilder(lines.get(i));
-            while (paddedPlayerLine.length() < maxLength) {
-                paddedPlayerLine.append(" ");
-            }
-    
-            // Pad the decorator's line to maxLength
             String decorLine = decor.get(i);
-            StringBuilder paddedDecorLine = new StringBuilder(decorLine);
-            while (paddedDecorLine.length() < maxLength) {
-                paddedDecorLine.append(" ");
-            }
+            StringBuilder lineBuilder = new StringBuilder(lines.get(i));
     
-            // Overlay the decorator's ASCII art onto the warrior's
-            for (int j = 0; j < maxLength; j++) {
-                char decorChar = paddedDecorLine.charAt(j);
-                if (decorChar != ' ') {
-                    paddedPlayerLine.setCharAt(j, decorChar);
+            for (int j = 0; j < decorLine.length(); j++) {
+                if (j < lineBuilder.length() && decorLine.charAt(j) != ' ') {
+                    lineBuilder.setCharAt(j, decorLine.charAt(j));
                 }
             }
     
-            // Replace the existing line with the new line
-            lines.set(i, paddedPlayerLine.toString());
+            lines.set(i, lineBuilder.toString());
         }
     }
 } 
