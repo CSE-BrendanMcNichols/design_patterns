@@ -6,12 +6,10 @@ import java.util.Random;
 public abstract class State {
     protected SpellingList spellingList;
     protected ArrayList<String> words;
-    protected Random rand;
+    private Random rand = new Random();
 
     public State(SpellingList spellingList) {
         this.spellingList = spellingList;
-        this.words = new ArrayList<>();
-        this.rand = new Random();
     }
 
     public String getNextWord() {
