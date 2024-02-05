@@ -7,12 +7,10 @@ public class SpellingList {
     private ThirdGradeState thirdGradeState;
 
     public SpellingList() {
-        // Pass 'this' to the state objects so they can change the state of the SpellingList
         firstGradeState = new FirstGradeState(this);
         secondGradeState = new SecondGradeState(this);
         thirdGradeState = new ThirdGradeState(this);
         
-        // Initially set the current state to first grade state
         state = firstGradeState;
     }
 

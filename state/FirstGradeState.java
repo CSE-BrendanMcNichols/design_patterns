@@ -4,7 +4,7 @@ public class FirstGradeState extends State {
 
     public FirstGradeState(SpellingList spellingList) {
         super(spellingList);
-        this.words = FileReader.getWords("C:\\Users\\brend\\Desktop\\design_patterns-1\\state\\first.txt"); // Assume FileReader is implemented correctly
+        this.words = FileReader.getWords("C:\\Users\\brend\\Desktop\\design_patterns-1\\state\\first.txt");
     }
 
     public void increaseGrade() {
