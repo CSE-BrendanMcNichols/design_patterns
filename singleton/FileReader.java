@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class FileReader {
-    public static final String FILE_NAME = "singleton\\words.txt";
+    public static final String FILE_NAME = "singleton/words.txt";
 
     /**
      * Reads in the file and creates a list of anagorams
